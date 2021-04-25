@@ -22,4 +22,4 @@ jobs:
       with:
         SSH: true
         BRANCH: deploy # The branch the action should deploy to.
-        FOLDER: '.' # The folder the action should deploy.
+        FOLDER: './build' # The folder the action should deploy.
