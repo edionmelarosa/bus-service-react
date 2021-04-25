@@ -25,7 +25,7 @@ export default function BusStopsList() {
         const response = await Axios.get('/bus-stops');
         setBusStops(response.data)
       } catch (error) {
-        alert('Error Pulling Bus Stops.');
+        alert('Error Pulling Bus Stops. Try refreshing your browser. If issue still persist, contact administrator.');
       }
     }
 

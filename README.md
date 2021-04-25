@@ -2,6 +2,8 @@
 Bus Stop Service App. 
 This app uses [Bus Service API](https://github.com/edionmelarosa/bus-service-api).
 
+[Demo](https://edionmelarosa.github.io/bus-service-app/)
+
 ## Installation
 * Create `.env` file in root. Copy `.env.example`
 * run `yarn install` to install packages.

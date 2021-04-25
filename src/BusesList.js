@@ -32,7 +32,7 @@ export default function BusesList(props) {
         setBuses(response.data.buses)
       } catch (error) {
         console.log(error)
-        alert('Error Pulling Buses.');
+        alert('Error Pulling Buses. Try refreshing your browser. If issue still persist, contact administrator.');
       }
     }
 
