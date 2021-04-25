@@ -7,19 +7,19 @@ jobs:
     build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-        - name: Checkout 🛎️
+        - name: Checkout
         uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
         with:
             persist-credentials: false
 
-        - name: Install SSH Client 🔑
+        - name: Install SSH Client
         uses: webfactory/ssh-agent@v0.2.0
         with:
             ssh-private-key: @php
                 echo '${{ secrets.DEPLOY_KEY }}'
             @endphp
 
-        - name: Deploy to Github Pages 🚀
+        - name: Deploy to Github Pages
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
             SSH: true
