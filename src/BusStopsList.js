@@ -1,42 +1,29 @@
 import './App.css';
-import { React, Component } from 'react';
+import { React, useEffect, useState } from 'react';
+import Axios from './axios';
 
-class BusStopsList extends Component {
-  constructor(props) {
-    super(props);
-    this.BusStopLists = [
-      {
-        name: 'Bus Stop 1', 
-        location: {
-          type: 'Point',
-          coordinates: [103.83972077425295, 1.335083707317516] // 216.73
-        },
-        buses: [
-        ]
-      },
-      {
-        name: 'Bus Stop 2', 
-        location: {
-          type: 'Point',
-          coordinates: [103.83770217768149, 1.3355637716640834] // 112.56
-        },
-        buses: [
-        ]
-      },
-    ];
-  }
-  render() {
-    return (
+export default function BusStopsList() {
+  const [BusStops, SetBusStops] = useState([]);
+
+  useEffect(() => {
+    async function getBuStops() {
+      try {
+        const response = await Axios.get('/bus-stops');
+        SetBusStops(response.data)
+      } catch (error) {
+        alert('Error Pulling Bus Stops.');
+      }
+    }
+
+    getBuStops()
+  }, [])
+  return(
       <div className="Bus-Stop">
-        { this.BusStopLists.map(item => (
-          <div className="Bus-Stop-Item" key={item.name}>
+        { BusStops.map(item => (
+          <div className="Bus-Stop-Item" key={item._id}>
             <strong>{item.name}</strong>
           </div>
         ))}
       </div>
-    )
-  }
-
+  ) 
 }
-
-export default BusStopsList;
