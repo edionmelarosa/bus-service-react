@@ -38,5 +38,8 @@
   text-align: center;
   border: 1px solid gray;
   display: inline-block;
-  width: 100px;
+}
+
+.Bus-List {
+  margin-top: 55px;
 }
